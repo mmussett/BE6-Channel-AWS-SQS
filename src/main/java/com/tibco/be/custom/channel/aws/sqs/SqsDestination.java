@@ -78,10 +78,6 @@ public class SqsDestination extends BaseDestination {
 
     private AwsCredentialsProvider createCredsProviderWithRole() throws ExecutionException, InterruptedException {
 
-        logger.log(Level.INFO,getChannel().getChannelProperties().getProperty(CONFIG_AWS_SQS_ACCESS_KEY));
-        logger.log(Level.INFO,getChannel().getChannelProperties().getProperty(CONFIG_AWS_SQS_SECRET_KEY));
-        logger.log(Level.INFO,getChannel().getChannelProperties().getProperty(CONFIG_AWS_ROLE_ARN));
-
 
         logger.log(Level.DEBUG,"Establishing AWS Credentials");
 
