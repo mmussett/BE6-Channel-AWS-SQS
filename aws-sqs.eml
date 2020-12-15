@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_11" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<lib name="Maven: software.amazon.awssdk:apache-client:2.15.15" scope="RUNTIME"/>
+	<lib name="Maven: org.apache.httpcomponents:httpclient:4.5.9" scope="RUNTIME"/>
+	<lib name="Maven: commons-logging:commons-logging:1.2" scope="RUNTIME"/>
+	<lib name="Maven: commons-codec:commons-codec:1.11" scope="RUNTIME"/>
+	<lib name="Maven: org.apache.httpcomponents:httpcore:4.4.11" scope="RUNTIME"/>
+	<lib name="Maven: software.amazon.awssdk:netty-nio-client:2.15.15" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-codec-http:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-codec-http2:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-codec:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-transport:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-resolver:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-common:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-buffer:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-handler:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: io.netty:netty-transport-native-unix-common:4.1.46.Final" scope="RUNTIME"/>
+	<lib name="Maven: com.typesafe.netty:netty-reactive-streams-http:2.0.4" scope="RUNTIME"/>
+	<lib name="Maven: com.typesafe.netty:netty-reactive-streams:2.0.4" scope="RUNTIME"/>
+	<levels>
+		<level name="Maven: software.amazon.awssdk:sqs:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.awssdk:aws-query-protocol:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.awssdk:protocol-core:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.awssdk:sdk-core:2.15.15" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-api:1.7.28" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.4" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.4" value="project"/>
+		<level name="Maven: org.reactivestreams:reactive-streams:1.0.2" value="project"/>
+		<level name="Maven: software.amazon.awssdk:auth:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.eventstream:eventstream:1.0.1" value="project"/>
+		<level name="Maven: software.amazon.awssdk:http-client-spi:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.awssdk:regions:2.15.15" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.4" value="project"/>
+		<level name="Maven: software.amazon.awssdk:annotations:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.awssdk:utils:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.awssdk:aws-core:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.awssdk:metrics-spi:2.15.15" value="project"/>
+		<level name="Maven: software.amazon.awssdk:apache-client:2.15.15" value="project"/>
+		<level name="Maven: org.apache.httpcomponents:httpclient:4.5.9" value="project"/>
+		<level name="Maven: commons-logging:commons-logging:1.2" value="project"/>
+		<level name="Maven: commons-codec:commons-codec:1.11" value="project"/>
+		<level name="Maven: org.apache.httpcomponents:httpcore:4.4.11" value="project"/>
+		<level name="Maven: software.amazon.awssdk:netty-nio-client:2.15.15" value="project"/>
+		<level name="Maven: io.netty:netty-codec-http:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-codec-http2:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-codec:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-transport:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-resolver:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-common:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-buffer:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-handler:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.46.Final" value="project"/>
+		<level name="Maven: io.netty:netty-transport-native-unix-common:4.1.46.Final" value="project"/>
+		<level name="Maven: com.typesafe.netty:netty-reactive-streams-http:2.0.4" value="project"/>
+		<level name="Maven: com.typesafe.netty:netty-reactive-streams:2.0.4" value="project"/>
+		<level name="Maven: software.amazon.awssdk:sts:2.15.45" value="project"/>
+		<level name="Maven: software.amazon.awssdk:profiles:2.15.15" value="project"/>
+		<level name="Maven: com.tibco.be:cep-common:6.0.0" value="project"/>
+		<level name="Maven: com.tibco.be:cep-channel-api:6.0.0" value="project"/>
+		<level name="Maven: com.tibco.be:cep-base:6.0.0" value="project"/>
+		<level name="Maven: com.tibco.be:cep-drivers:6.0.0" value="project"/>
+		<level name="Maven: com.tibco.be:cep-kernel:6.0.0" value="project"/>
+	</levels>
+</component>

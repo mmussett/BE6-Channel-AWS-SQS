@@ -1,0 +1,58 @@
+
+Importing module dependencies in to maven
+
+
+   custom-channel-api.jar
+
+mvn install:install-file \
+   -Dfile=/opt/tibco/be60/be/6.0/lib/cep-channel-api.jar \
+   -DgroupId=com.tibco.be \
+   -DartifactId=cep-channel-api \
+   -Dversion=6.0.0 \
+   -Dpackaging=jar \
+   -DgeneratePom=true
+
+
+
+
+   cep-common
+
+   mvn install:install-file \
+      -Dfile=/opt/tibco/be60/be/6.0/lib/cep-common.jar \
+      -DgroupId=com.tibco.be \
+      -DartifactId=cep-common \
+      -Dversion=6.0.0 \
+      -Dpackaging=jar \
+      -DgeneratePom=true
+
+
+   cep-core
+
+   mvn install:install-file \
+      -Dfile=/opt/tibco/be60/be/6.0/lib/cep-base.jar \
+      -DgroupId=com.tibco.be \
+      -DartifactId=cep-base \
+      -Dversion=6.0.0 \
+      -Dpackaging=jar \
+      -DgeneratePom=true
+
+   cep-drivers
+
+   mvn install:install-file \
+      -Dfile=/opt/tibco/be60/be/6.0/lib/cep-drivers.jar \
+      -DgroupId=com.tibco.be \
+      -DartifactId=cep-drivers \
+      -Dversion=6.0.0 \
+      -Dpackaging=jar \
+      -DgeneratePom=true
+
+
+cep-kernel
+
+   mvn install:install-file \
+      -Dfile=/opt/tibco/be60/be/6.0/lib/cep-kernel.jar \
+      -DgroupId=com.tibco.be \
+      -DartifactId=cep-kernel \
+      -Dversion=6.0.0 \
+      -Dpackaging=jar \
+      -DgeneratePom=true
