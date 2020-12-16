@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
+  <groupId>com.tibco.businessevents.contribution</groupId>
   <artifactId>aws-sqs</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <build>
     <plugins>
       <plugin>
@@ -33,38 +33,52 @@
           <target>11</target>
         </configuration>
       </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>copy-files-on-build</id>
+            <phase>install</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${be.home}/lib/ext/tpcl</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>target</directory>
+                  <include>${project.build.finalName}.${project.packaging}</include>
+                  <filtering>false</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
     <dependency>
-      <groupId>com.tibco.be</groupId>
+      <groupId>com.tibco.businessevents</groupId>
       <artifactId>cep-common</artifactId>
-      <version>6.0.0</version>
-      <scope>compile</scope>
+      <version>${be.version}</version>
+      <scope>system</scope>
+      <systemPath>${be.home}/lib/cep-common.jar</systemPath>
     </dependency>
     <dependency>
-      <groupId>com.tibco.be</groupId>
-      <artifactId>cep-channel-api</artifactId>
-      <version>6.0.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.tibco.be</groupId>
-      <artifactId>cep-base</artifactId>
-      <version>6.0.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.tibco.be</groupId>
-      <artifactId>cep-drivers</artifactId>
-      <version>6.0.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.tibco.be</groupId>
+      <groupId>com.tibco.businessevents</groupId>
       <artifactId>cep-kernel</artifactId>
-      <version>6.0.0</version>
-      <scope>compile</scope>
+      <version>${be.version}</version>
+      <scope>system</scope>
+      <systemPath>${be.home}/lib/cep-kernel.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.tibco.businessevents</groupId>
+      <artifactId>cep-channel-api</artifactId>
+      <version>${be.version}</version>
+      <scope>system</scope>
+      <systemPath>${be.home}/lib/cep-channel-api.jar</systemPath>
     </dependency>
   </dependencies>
   <dependencyManagement>
@@ -79,7 +93,12 @@
     </dependencies>
   </dependencyManagement>
   <properties>
-    <java.version>1.8</java.version>
+    <testcontainer.verion>1.15.0</testcontainer.verion>
+    <maven.compiler.target>11</maven.compiler.target>
+    <be.version>6.1</be.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <junit.verion>5.4.2</junit.verion>
+    <be.home>/opt/tibco/be61/be/6.1</be.home>
   </properties>
 </project>
 

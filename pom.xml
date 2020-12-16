@@ -4,12 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.tibco.businessevents.contribution</groupId>
     <artifactId>aws-sqs</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
-        <java.version>1.8</java.version>
+        <be.home>/opt/tibco/be61/be/6.1</be.home>
+        <be.version>6.1</be.version>
+        <junit.verion>5.4.2</junit.verion>
+        <testcontainer.verion>1.15.0</testcontainer.verion>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
     </properties>
 
     <dependencyManagement>
@@ -21,6 +26,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -55,16 +61,43 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-files-on-build</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${be.home}/lib/ext/tpcl</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>target</directory>
+                                    <include>${project.build.finalName}.${project.packaging}</include>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
     <dependencies>
 
-
+        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/sqs -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>sqs</artifactId>
+            <version>2.15.47</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/sts -->
         <dependency>
@@ -73,42 +106,29 @@
             <version>2.15.45</version>
         </dependency>
 
+        <!-- System dependencies -->
         <dependency>
-            <groupId>com.tibco.be</groupId>
+            <groupId>com.tibco.businessevents</groupId>
             <artifactId>cep-common</artifactId>
-            <version>6.0.0</version>
+            <version>${be.version}</version>
+            <scope>system</scope>
+            <systemPath>${be.home}/lib/cep-common.jar</systemPath>
         </dependency>
-
         <dependency>
-            <groupId>com.tibco.be</groupId>
-            <artifactId>cep-channel-api</artifactId>
-            <version>6.0.0</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.tibco.be</groupId>
-            <artifactId>cep-base</artifactId>
-            <version>6.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tibco.be</groupId>
-            <artifactId>cep-drivers</artifactId>
-            <version>6.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tibco.be</groupId>
+            <groupId>com.tibco.businessevents</groupId>
             <artifactId>cep-kernel</artifactId>
-            <version>6.0.0</version>
+            <version>${be.version}</version>
+            <scope>system</scope>
+            <systemPath>${be.home}/lib/cep-kernel.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.tibco.businessevents</groupId>
+            <artifactId>cep-channel-api</artifactId>
+            <version>${be.version}</version>
+            <scope>system</scope>
+            <systemPath>${be.home}/lib/cep-channel-api.jar</systemPath>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.amazonaws</groupId>-->
-<!--            <artifactId>aws-java-sdk-sts</artifactId>-->
-<!--            <version>1.11.774</version>-->
-<!--        </dependency>-->
 
     </dependencies>
 
